@@ -1,0 +1,18 @@
+
+<p>
+  <strong>Brand:</strong>
+  <%= @bottle.brand %>
+</p>
+ 
+<p>
+  <strong>Spirit:</strong>
+  <%= @bottle.spirit %>
+</p>
+
+<p>
+  <strong>Volume:</strong>
+  <%= @bottle.volume %> oz
+</p>
+
+<%= link_to 'Back', bottles_path %>
+<%= link_to 'edit', edit_bottle_path(bottle) %>

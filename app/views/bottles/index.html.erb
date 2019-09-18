@@ -1,0 +1,22 @@
+<h1> Listing Bottles </h1>
+
+<%= link_to 'New bottle', new_bottle_path %>
+
+<table>
+    <tr>
+        <th> Brand </th>
+        <th> Spirit </th>
+        <th> volume </th>
+        <th> Link </th>
+    </tr>
+
+    <% @bottles.each do |bottle| %>
+        <tr>
+            <td><%= bottle.brand %></td>
+            <td><%= bottle.spirit %></td>
+            <td><%= bottle.volume %></td>
+            <td><%= link_to 'Show', bottle_path(bottle) %></td>
+            <td><%= link_to 'edit', edit_bottle_path(bottle) %></td>
+        </tr>
+    <% end %>
+</table>

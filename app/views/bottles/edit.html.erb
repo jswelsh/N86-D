@@ -1,0 +1,37 @@
+<h1> Edit Bottle! </h1>
+
+<%= form_with(model: @bottle, local: true) do |form| %>
+    <% if @bottle.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@bottle.errors.count, "error") %>
+                prohibited this article from being saved:
+            </h2>
+            <ul>
+                <% @bottle.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+        <p>
+      <%= form.label :brand %><br>
+      <%= form.text_field :brand %>
+    </p>
+  
+    <p>
+      <%= form.label :spirit %><br>
+      <%= form.text_field :spirit %>
+    </p>
+     <p>
+      <%= form.label :volume %><br>
+      <%= form.number_field :volume, in: 1.0..26.0, step: 1 %>
+    </p>
+
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>
+
+  <%= link_to 'Back', bottles_path %>
